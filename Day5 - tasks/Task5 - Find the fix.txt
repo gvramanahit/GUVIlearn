@@ -1,0 +1,76 @@
+1. Uncaught TypeError: Cannot read the property.
+-------------------------------------------------
+
+function test(t) {      //defining a function
+  if (t === undefined) {       //if t=undefined, call tt
+        console.log(t.tt)      //call tt member from t
+  }
+  return t;    
+}
+var a;    //a is a variable with undefined value
+console.log(test(a)); //function call
+
+Since the variable a is not initiated and we are trying to access a property of a we are getting
+'Uncaught TypeError: Cannot read the property 'tt' of undefined'.
+
+This can be fixed by initiating the variable a or having an error handling like below.
+
+if (typeOf(a) != 'undefined') {
+  ...
+}
+
+
+2. TypeError: undefined is not an object.
+------------------------------------------
+This is similar to the above error. But the only difference is that this error occurs in Safari.
+
+
+3. TypeError: null is not an object.
+------------------------------------
+This is an error that occurs in Safari when you read a property or call a method on a null object.
+In Chrome, we get 'VM167:2 Uncaught TypeError: Cannot read property 'length' of null' for the same case.
+This error occurs when the below code is executed.
+
+var a = null;
+console.log(a.length);
+
+The below error handling can be done to handle this error.
+
+if (a != 'null' ) {
+  ...
+}
+
+
+4. (unknown): script error.
+---------------------------
+The Script error occurs when an uncaught JavaScript error crosses domain boundaries in violation of the cross-origin policy.
+
+5. TypeError: undefined is not a function.
+-------------------------------------------
+This is an error that occurs in Chrome when you call an undefined function.
+
+function clearBoard(){
+  alert("Cleared");
+}
+
+document.addEventListener("click", function(){
+  this.clearBoard(); 
+});
+
+If the above code is run, it results in the following error "Uncaught TypeError: this.clearBoard is not a function".
+
+The below can solve this problem.
+
+var self=this;  
+document.addEventListener("click", function(){
+  self.clearBoard();
+});
+
+or
+
+document.addEventListener("click",this.clearBoard.bind(this));
+
+6. TypeError: Object doesn't support property.
+----------------------------------------------
+This error is similar to the above error. The only difference is that this error message is thrown when the code
+is executed in IE.

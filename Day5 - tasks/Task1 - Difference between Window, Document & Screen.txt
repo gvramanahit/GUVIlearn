@@ -1,0 +1,20 @@
+Difference between window, document & screen.
+
+Window:
+Window object is right at the top of the javascript objects hierarchy. It's a 
+global object and is the first object that gets loaded into the browser. 
+This object can be accessed as window. 
+
+Document:
+The document object is the html or php or any document that will be loaded
+into the browser. The document actually gets loaded inside the window object 
+and has properties available to it like title, URL, cookie, etc.
+This object can be accessed as window.document.{property} or document.property
+
+Screen: 
+Screen object contains the information about the visitor's screen.
+It can either be accessed as window.screen or screen
+
+Since window object is a global object, no need to explicitly mention the 
+window object to refer it's properties. It will usually be figured out
+during the run time.
