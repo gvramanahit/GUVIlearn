@@ -1,0 +1,111 @@
+Print odd numbers in an array 
+*****************************
+
+//Anonymous function
+var oddFun = function (arrOne) {
+	let arrTwo = arrOne.filter(element => element % 2 != 0);
+	console.log(arrTwo);
+}
+
+var arrOne = [1,2,3,4,5,6,7];
+oddFun(arrOne);
+
+----------------------------------
+
+//IIFE function
+var arrOne = [1,2,3,4,5,6,7];
+
+(function (){
+	let arrTwo = arrOne.filter(element => element % 2 != 0);
+	console.log(arrTwo);
+})(arrOne);
+
+
+Convert all the strings to title caps in a string array
+********************************************************
+
+//Anonymous function
+var convCap = function (arrOne) {
+	let arrTwo = arrOne.map(element => element.toUpperCase());
+	console.log(arrTwo);
+}
+
+var arrOne = ['Hello','guvi','geek'];
+convCap(arrOne);
+
+--------------------------------------------
+
+//IIFE function
+(function () {
+	let arrTwo = arrOne.map(element => element.toUpperCase());
+	console.log(arrTwo);
+}) (arrOne);
+
+var arrOne = ['Hello','guvi','geek'];
+
+Sum of all numbers in an array
+******************************
+
+//Anonymous function
+var sumArr = function (arrOne) {
+	let sum = arrOne.reduce((acc,element) => acc += element , 0);
+	console.log(sum);
+}
+
+var arrOne = [1,2,3,4,5,6,7,8];
+sumArr(arrOne);
+
+--------------------------------------------
+
+//IIFE function
+(function () {
+	let sum = arrOne.reduce((acc,element) => acc += element , 0);
+	console.log(sum);
+}) (arrOne);
+
+var arrOne = [1,2,3,4,5,6,7,8];
+
+Return all the prime numbers in an array
+*****************************************
+
+//Anonymous function
+var primeNum = function (arrOne) {
+	let arrTwo = arrOne.filter(element => (element === 2 ? true : isPrime(element)));
+	console.log(arrTwo);
+}
+
+var isPrime = function (element){
+	if (element === 0 || element === 1)
+		return false;
+	else {
+		for (let i=2;i<=Math.sqrt(element);i++){
+			if (element % i === 0){return false; }
+		}
+		return true;
+	}
+}
+
+var arrOne = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+primeNum(arrOne);
+
+----------------------------------------------------
+
+//IIFE function
+(function () {
+	let arrTwo = arrOne.filter(element => (element === 2 ? true : isPrime(element)));
+	console.log(arrTwo);
+})(arrOne);
+
+var isPrime = function (element){
+	if (element === 0 || element === 1)
+		return false;
+	else {
+		for (let i=2;i<=Math.sqrt(element);i++){
+			if (element % i === 0){return false; }
+		}
+		return true;
+	}
+}
+
+var arrOne = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+				
