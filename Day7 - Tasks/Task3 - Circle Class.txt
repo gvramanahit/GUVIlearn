@@ -1,0 +1,29 @@
+class Circle{
+
+	constructor (...a) {
+		if (a[0] != 'undefined') {this.radius = a[0];}
+		if (a[1] != 'undefined') {this.color = a[1];}
+	}
+	
+	getRadius(){
+	}
+	
+	getColor(){
+	}
+
+	setRadius(){
+	}
+	
+	setColor(){
+	}
+	
+	toString(){
+	}
+	
+	getArea(){
+	}
+}
+
+let obj1 = new Circle();
+let obj2 = new Circle(5);
+let obj3 = new Circle(5, 'green');

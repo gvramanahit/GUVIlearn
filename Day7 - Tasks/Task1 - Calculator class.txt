@@ -1,0 +1,24 @@
+class Calc{
+
+	add (atr1, atr2){
+		return atr1+atr2;
+	}
+	
+	subtract (atr1, atr2){
+		return atr1-atr2;
+	}
+
+	multiply (atr1, atr2){
+		return atr1*atr2;
+	}
+	
+	divide (atr1, atr2){
+		return atr1/atr2;
+	}
+}
+
+let obj1 = new Calc();
+console.log(obj1.add(1,0));
+console.log(obj1.subtract(7,5));
+console.log(obj1.multiply(1,3));
+console.log(obj1.divide(16,4));

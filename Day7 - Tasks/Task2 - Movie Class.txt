@@ -1,0 +1,27 @@
+class Movie{
+	constructor(title,studio,rating='PG') {
+		this.title = title;
+		this.studio = studio;
+		this.rating = rating;
+	}
+	
+	getPG(arrMovies){
+		let arrPGMovies = arrMovies.filter( (element) => element.rating === 'PG');
+		return arrPGMovies;
+	}
+}
+
+let movieA = new Movie('Casino Royale','Eon Productions','PG13');
+let movieB = new Movie('El Camino','BB Productions','PG');
+let movieC = new Movie('Exam','WB Productions','PG');
+let movieD = new Movie('Madmax','WB Productions');
+
+let arr = [];
+
+arr.push(movieA);
+arr.push(movieB);
+arr.push(movieC);
+arr.push(movieD);
+
+let arr1 = movieA.getPG(arr);
+console.log(arr1);
