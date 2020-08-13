@@ -1,0 +1,69 @@
+class TV {
+    constructor(brand,price,inches,OnOFF,volume=50,channel=1){
+        this.brand = brand;
+        this.price = price;
+        this.inches = inches;
+        this.OnOFF = OnOFF;
+        this._volume = volume;
+        this._channel = channel;
+    }
+    
+    get volume(){
+        return this._volume;
+    }
+    
+    set volume(value){
+        if(value < 0 || value > 100){
+            console.log("The volume cannot be less than 0 or greater than 100");
+            return;
+        }
+        this._volume = value;
+    }
+    
+    get channel(){
+        return this._channel;
+    }
+    
+    set channel(value){
+        if (value > 50){
+            console.log("50 is the last channel");
+            return;
+        }
+        this._channel = value;
+    }
+    
+    reset (channel = 1, volume = 50) {
+        this._channel = channel;
+        this._volume = volume;
+    }
+    
+    get status () {
+        return this.brand+' at channel '+this._channel+', volume '+this._volume;
+    }
+    
+}
+
+class LED extends TV {
+    constructor (screenThick, energy, lifeSpan, refreshRate, viewingAngle, backLight, displayDetails){
+        this.screenThick = screenThick;
+        this.energy = energy;
+        this.lifeSpan = lifeSpan;
+        this.refreshRate = refreshRate;
+        this.viewingAngle = viewingAngle;
+        this.backLight = backLight;
+        this.displayDetails = displayDetails;
+    }
+}
+
+
+class Plasma extends TV {
+    constructor (screenThick, energy, lifeSpan, refreshRate, viewingAngle, backLight, displayDetails){
+        this.screenThick = screenThick;
+        this.energy = energy;
+        this.lifeSpan = lifeSpan;
+        this.refreshRate = refreshRate;
+        this.viewingAngle = viewingAngle;
+        this.backLight = backLight;
+        this.displayDetails = displayDetails;
+    }
+}
