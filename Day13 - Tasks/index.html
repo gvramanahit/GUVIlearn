@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        .div1{
+            display: block;
+            background-color: rgb(112, 105, 105);
+            height: 250px;
+            margin: 10px 20px 0px 20px;
+        }
+
+        .div2 {
+            background-color: lightgray;
+            margin: 0px 20px 0px 20px;
+            height: 40px;
+        }
+
+        .div3{
+            display: block;
+            background-color: rgb(112, 105, 105);
+            height: 40px;
+            margin: 0px 20px 0px 20px;
+        }
+
+        
+        .div4 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .div5 {
+            display: inline-block;
+            width: 45%;
+        }
+
+        .div7 {
+            display: block;
+        }
+
+        .div8 {
+            display: inline-block;
+            width: 5%;
+            border-left: 2px solid rgb(112, 105, 105);
+            height: 1530px;
+            top: 400px;
+            margin-left: 70px;
+            text-align: center;
+        }
+
+        .div9 {
+            display: inline-block;
+            margin-left: -40px;
+            width: 45%;
+        }
+
+        .img1 {
+            position: relative;
+            left: 620px;
+            top: 50px;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            border: rgb(230, 184, 99) dotted;
+        }
+
+        .img2 {
+            position: relative;
+            left: 30px;
+            top: 30px;
+            border-radius: 50%;
+            border: rgb(230, 184, 99) dotted;
+            width: 60px;
+            height: 60px;
+        }
+
+        .span1 {
+            position: relative;
+            left: 300px;
+            top: 80px;
+            border-radius: 8px;
+            padding: 10px 20px 10px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 60px;
+            background-color: rgb(230, 184, 99);
+        }
+
+        
+        .hr1 {
+            margin: 0px 20px 10px 20px;
+            color: rgb(112, 105, 105);
+        }
+
+        .text1 {
+            font-weight: bold;
+            color: rgb(112, 105, 105);
+            font-size: 40px;
+            position: relative;
+            left: 40px;
+            top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .p1 {
+            color: rgb(71, 62, 62);
+            font-size: 30px;
+            text-align: left;
+            position: relative;
+            left: 25px;
+            top: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .p2 {
+            text-align: left;
+            font-weight: bold;
+            font-size: 30px;
+            position: relative;
+            left: 25px;
+            top: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(71, 62, 62);
+        }
+    </style>
+</head>
+<body>
+    <script>    
+
+        var div1 = createCustomElement('div','div1');
+        var div2 = createCustomElement('div','div2');
+        var div3 = createCustomElement('div','div3');
+        var div4 = createCustomElement('div','div4');
+        div4.innerHTML = 'N. Damen Avenue, Chicago 99999 | 999-999-9999 | hello@kickresume.com | www.kickresume.com'
+        var span1 = createCustomElement('span','span1');
+        span1.innerHTML = 'BRIAN DUBEY';
+        var img1 = createCustomElementImg('img','img1','Rohit-Sharma.png');
+        var hr1 = createCustomElement('hr','hr1');
+
+        var div5 = createCustomElement('div','div5');
+
+        var div7 = createCustomElement('div','div7');
+        var text1 = createCustomElement('text','text1');
+        text1.innerHTML = 'Profile';
+        var img2 = createCustomElementImg('img','img2','profile.png');
+        var p1 = createCustomElement('p','p1');
+        p1.innerHTML = 'Innovative optimized solution seeker. Excited to be at the deployment phase of my new career as a web developer. I am ambitious, adventurous, assidous, animated and an alteration advocate.';
+        div7.append(img2,text1,p1);
+
+        var div8 = createCustomElement('div','div7');
+        var text3 = createCustomElement('text','text1');
+        text3.innerHTML = 'Skills';
+        var img3 = createCustomElementImg('img','img2','skill.png');
+        var p3 = createCustomElement('p', 'p2');
+        p3.innerHTML = 'Technical Skills';
+        var p2 = createCustomElement('p','p1');
+        p2.innerHTML = 'Javascript<br>CSS<br>HTML<br>React<br>Redux<br>Mongo<br>Deployment';
+        var p4 = createCustomElement('p', 'p2');
+        p4.innerHTML = 'Additional Skills';
+        var p5 = createCustomElement('p','p1');
+        p5.innerHTML = 'Project Management<br>Recruitment<br>Business Development<br>Editing<br>Fund Raising';
+        div8.append(img3,text3,p3,p2,p4,p5);
+
+        var div9 = createCustomElement('div','div7');
+        var text4 = createCustomElement('text','text1');
+        text4.innerHTML = 'Work Experience';
+        var img4 = createCustomElementImg('img','img2','work.png');
+        var div10 = createCustomElement('div','div7');
+        var text5 = createCustomElement('text', 'p2');
+        text5.innerHTML = 'Event Manager  ';
+        var text6 = createCustomElement('text','p1');
+        text6.innerHTML = '03/2014 - 02/2017<br>C3 Presents, Washington DC';
+        div10.append(text5,text6);
+        var div11 = createCustomElement('div','div7');
+        var list1 = createCustomElement('ul','p1');
+        var list11 = createCustomElement('li','p1');
+        list11.innerHTML = 'Lead and execute all phases of event planning and production spanning committee recruitment, training, vendor relationships and on-site facilitation.';
+        var list12 = createCustomElement('li','p1');
+        list12.innerHTML = 'Brought new business to the organization through relentless networking and stewardship which helped the company win the bid for the State Department Summit on the Middle East and, companies largest civit event to date, the united state of women';
+        list1.append(list11,list12);
+        div11.append(list1);
+        div9.append(img4,text4,div10,div11);
+
+        div5.append(div7,div8,div9);
+
+        var div12 = createCustomElement('div','div8');
+
+
+        var div6 = createCustomElement('div','div9');
+        var text2 = createCustomElement('text','text1');
+        text2.innerHTML = 'Work Experience';
+        var img3 = createCustomElementImg('img','img2','work.png');
+        var div13 = createCustomElement('div','div7');
+        var text7 = createCustomElement('text', 'p2');
+        text7.innerHTML = 'Event Manager  ';
+        var text8 = createCustomElement('text','p1');
+        text8.innerHTML = '03/2014 - 02/2017<br>C3 Presents, Washington DC';
+        div13.append(text7,text8);
+        var div14 = createCustomElement('div','div7');
+        var list2 = createCustomElement('ul','p1');
+        var list21 = createCustomElement('li','p1');
+        list21.innerHTML = 'Arranging presentations and pitch deck.';
+        var list22 = createCustomElement('li','p1');
+        list22.innerHTML = 'Designing a PR plan and establishing important focus points';
+        var list23 = createCustomElement('li','p1');
+        list23.innerHTML = 'Designing, Creating and Managing content across multipls communication platforms.';
+        var list24 = createCustomElement('li','p1');
+        list24.innerHTML = 'Building relationships with key media players.';
+        list2.append(list21,list22,list23,list24);
+        div14.append(list2);
+
+
+        var div15 = createCustomElement('div','div7');
+        var text9 = createCustomElement('text','text1');
+        text9.innerHTML = 'Education';
+        var img5 = createCustomElementImg('img','img2','work.png');
+        var text10 = createCustomElement('text', 'p2');
+        text10.innerHTML = 'Engineering Immersion program';
+        var text11 = createCustomElement('text','p1');
+        text11.innerHTML = '11/2018 - 06/2018<br>Thinkful, Chicago, IL<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Project-focused intensive program with emphasis<br>on Mongo, Express, React, and Javascript(MERN)<br>technical stack. ';
+        div15.append(text10,text11);
+        var div16 = createCustomElement('div','div7');
+        var list3 = createCustomElement('ul','p1');
+        var list31 = createCustomElement('li','p1');
+        list31.innerHTML = 'Developed a full stack web application ,"RenewU" using React that allows users to explore various aspects of meditation. User"s progress is stored on a backend created using Node and MongoDB.';
+        var list32 = createCustomElement('li','p1');
+        list32.innerHTML = 'Developed a language learning app, "Foodie Phonetics" using spaced repetition and a linked list data structure. React was used to create the front end components while Node and Mongo were used to create a backend that stores user data';
+        var list33 = createCustomElement('li','p1');
+        list33.innerHTML = 'Developed a conceirge app, "Pley", for individuals looking for curated suggestions when visiting a new place. React was used to develop the front end which includes real-time chat, drag and drop and variety of advanced features. The backend, built using Node, Express, and Mongo, takes advantage of well- developed RESTful API, Geospatial searching, and user authentication with JWT.';
+        var list34 = createCustomElement('li','p1');
+        list34.innerHTML = 'Developed a conceirge app, "Pley", for individuals looking for curated suggestions when visiting a new place. React was used to develop the front end which includes of advanced features.';
+        list3.append(list31,list32,list33,list34);
+        div16.append(list3);
+
+
+        div6.append(img3,text2,div13,div14,img5,text9,div15,div16);
+
+
+        function createCustomElement(type,classa){
+            let elem = document.createElement(type);
+            elem.setAttribute('class',classa);
+            return elem;
+        }
+
+        function createCustomElementImg(type,classa,link){
+            let elem = document.createElement(type);
+            elem.setAttribute('class',classa);
+            elem.setAttribute('src',link)
+            return elem;
+        }
+
+        div1.append(img1,span1);
+
+        document.body.append(div1,div2,div3,div4,hr1,div5,div12,div6);
+    </script>
+</body>
+</html>
