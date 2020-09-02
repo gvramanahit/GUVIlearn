@@ -1,0 +1,143 @@
+.div1{
+    height: 780px;
+    border: solid black 5px;
+    padding: 0px;
+}
+
+.div2{
+    margin: 5px;
+    border: solid black 5px;
+    height: 150px;
+    padding: 0px;
+}
+
+.div3{
+    margin: 5px;
+    border: solid black 5px;
+    height: 605px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.span1{
+    background-color: gray;
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span2{
+    background-color: gray;
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span3{
+    background-color: gray;
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span4{
+    background-color: gray;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span5{
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span6{
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span7{
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span8{
+    background-color: gray;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span9{
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span10{
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span11{
+    border-right: solid black 5px;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span12{
+    background-color: gray;
+    border-bottom: solid black 5px;
+    height: 120px;
+}
+
+.span13{
+    border-right: solid black 5px;
+    height: 120px;
+}
+
+.span14{
+    border-right: solid black 5px;
+    height: 120px;
+}
+
+.span15{
+    border-right: solid black 5px;
+    height: 120px;
+}
+
+.span16{
+    background-color: gray;
+    height: 120px;
+}
+
+.span17{
+    border-top: solid black 5px;
+    border-right: solid black 5px;
+    height: 115px;
+}
+
+.span18{
+    background-color: orange;
+    border-top: solid black 5px;
+    height: 115px;
+}
+
+.font1 {
+    padding: 20px;
+    color: indigo;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
+.text1{
+    padding: 20px;
+    color: indigo;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: right;
+}
