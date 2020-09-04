@@ -82,8 +82,12 @@ function createCustomElementS(type,classa,HTML,id){
 }
 
 document.getElementById('text1').onkeydown = function(e) {
+        return false;
+} 
+
+document.body.onkeydown = function(e) {
     if(parseInt(String.fromCharCode(e.keyCode)) <= 9){
-        return true;
+        document.getElementById('text1').value += String.fromCharCode(e.keyCode);
     }
     else{
         return false;
