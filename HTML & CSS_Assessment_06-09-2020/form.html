@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="">
+    <style>
+        .form1{
+            display: table;
+            background-color: rgb(231, 235, 243);
+            margin: 0 auto;
+        }
+
+        .div1{
+            display: table-row;
+            height: 40px;
+            padding : 5px ;
+        }
+
+        label{
+            display: table-cell;
+            padding: 0px 100px 0px 10px;
+        }
+
+        label,i{
+            display: table-cell;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        i{
+            display: table-cell;
+            height: 20px;
+            width: 20px;
+        }
+
+        select,input{
+            font-family: 'Times New Roman', Times, serif;
+            display: table-cell;
+            font-size: 15px;
+            height: 25px;
+            width: 450px;
+            margin : 10px;
+        }
+
+
+    </style>
+    <script src="https://kit.fontawesome.com/6ba2a17419.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="" method="GET" class="form1">
+        <div class="div1" style="padding-top: 100px;">
+            <label for="name">Full Name</label>
+            <i class="fas fa-user-alt"></i>
+            <input type="text" name="name" id="name" placeholder='Full Name' required>
+        </div>
+        <div class="div1">
+            <label for="add1">Address Line1</label>
+            <i class="far fa-address-book"></i>
+            <input type="text" name="address1" id="add1" placeholder='Address Line1' required>
+        </div>
+        <div class="div1">
+            <label for="add2">Address Line2</label>
+            <i class="far fa-address-book"></i>
+            <input type="text" name="address2" id="add2" placeholder='Address Line2' required>
+        </div>
+        <div class="div1">
+            <label for="city">City</label>
+            <i class="far fa-building"></i>
+            <input type="text" name="city" id="city" placeholder='City' required>
+        </div>
+        <div class="div1">
+            <label for="state">State/Province/Region</label>
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" name="state" id="state" placeholder='State/Province/Region' required>
+        </div>
+        <div class="div1">
+            <label for="zip">Postal Code/ZIP</label>
+            <i class="far fa-envelope-open"></i>
+            <input type="text" name="zip" id="zip" placeholder='Postal Code/ZIP' required>
+        </div>
+        <div class="div1">
+            <label for="zip">Country</label>
+            <i class="fas fa-flag"></i>
+            <select name="country" id="country">
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Australia">Australia</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+            </select>
+        </div>
+        <div class="div1">
+            <label for="email">Email</label>
+            <i class="fas fa-user-alt"></i>
+            <input type="text" name="email" id="email" placeholder='Email' required>
+        </div>
+        <div class="div1">
+            <label for="phone">Phone Number</label>
+            <i class="fas fa-user-alt"></i>
+            <input type="text" name="phone" id="phone" placeholder='Phone Number' required>
+        </div>
+        <div class="div1">
+            <label for="submit"></label>
+        <button type="submit" onclick="alertFunction()">submit</button>
+        </div>
+    </form>
+
+    <script>
+        function alertFunction(){
+            if (document.getElementById('name').value > ' ' && 
+                document.getElementById('add1').value > ' ' &&
+                document.getElementById('add2').value > ' ' &&
+                document.getElementById('city').value > ' ' &&
+                document.getElementById('state').value > ' ' &&
+                document.getElementById('zip').value > ' ' &&
+                document.getElementById('email').value > ' ' &&
+                document.getElementById('phone').value > ' ' )
+            alert('Thank you!');
+        }
+    </script>
+
+</body>
+</html>
