@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <style>
+        .pagination{
+            margin-top: 30px;
+        }
+        .pagination a{
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            color: black;
+        }
+
+        .active {
+            background-color: #4caf50;
+            border: 1px solid #4caf50;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active){
+            background-color: #ddd;
+        }
+        .div1{
+            font-family: sans-serif;
+            margin-bottom: 20px;
+        }
+        table, th, tr, td{
+            border: 1px solid black;
+            font-family: sans-serif;
+            
+        }
+    </style>
+</head>
+<body>
+    <script src="data.js"></script>
+    <script>
+        
+        var div1 = document.createElement('div');
+        div1.setAttribute('class', 'div1');
+        var span1 = document.createElement('span');
+        span1.innerHTML = 'Select the number of results to be displayed in a page: '
+        var radio1 = document.createElement('input');
+        radio1.setAttribute('type','radio');
+        radio1.setAttribute('name','filter');
+        radio1.setAttribute('id','rows10');
+        radio1.setAttribute('value','10');
+        radio1.setAttribute('checked','checked');
+        var label1 = document.createElement('label');
+        label1.setAttribute('for','rows10')
+        label1.innerHTML = '10';
+        radio1.onclick=function(){
+            document.getElementById('table1').innerHTML = '';
+            document.getElementById('div2').innerHTML = '';
+            custom(1,10);
+            custom1(10);
+        };
+
+        var radio2 = document.createElement('input');
+        radio2.setAttribute('type','radio');
+        radio2.setAttribute('name','filter');
+        radio2.setAttribute('id','rows20');
+        radio2.setAttribute('value','20');
+        var label2 = document.createElement('label');
+        label2.setAttribute('for','rows20')
+        label2.innerHTML = '20';
+        radio2.onclick=function(){
+            document.getElementById('table1').innerHTML = '';
+            document.getElementById('div2').innerHTML = '';
+            custom(1,20);
+            custom1(20);
+        };
+
+        div1.append(span1,label1,radio1,label2,radio2);
+            document.body.append(div1);
+
+        var div3 = document.createElement('div');
+
+        var table1 = document.createElement('table');
+        table1.setAttribute('id','table1');
+        var tableheader = document.createElement('tr');
+        var tableH1 = document.createElement('td');
+        var tableH2 = document.createElement('td');
+        var tableH3 = document.createElement('td');
+
+        tableH1.innerHTML = 'ID';
+        tableH2.innerHTML = 'NAME';
+        tableH3.innerHTML = 'EMAIL';
+
+        tableheader.append(tableH1,tableH2,tableH3);
+
+        var div2 = document.createElement('div');
+        div2.setAttribute('id','div2');
+        div2.setAttribute('class','pagination');
+        
+        var a1 = customCreateA('a','#','&laquo',1);
+        var a2 = customCreateA('a','#','1',1);
+        var a3 = customCreateA('a','#','2',2);
+        var a4 = customCreateA('a','#','3',3);
+        var a5 = customCreateA('a','#','4',4);
+        var a6 = customCreateA('a','#','5',5);
+        var a7 = customCreateA('a','#','6',6);
+        var a8 = customCreateA('a','#','7',7);
+        var a9 = customCreateA('a','#','8',8);
+        var a10 = customCreateA('a','#','9',9);
+        var a11 = customCreateA('a','#','10',10);
+        var a12 = customCreateA('a','#','&raquo',5);
+        var a13 =  customCreateA('a','#','&raquo',10);
+
+        function customCreateA(type,link,HTML,page){
+            let obj = document.createElement(type);
+            obj.setAttribute('href',link);
+            obj.innerHTML = HTML;
+            obj.onclick = function() {
+                document.getElementById('table1').innerHTML = '';
+                let val = 0;
+                if(document.getElementById('rows10').checked){
+                    val = document.getElementById('rows10').value;
+                }
+                else{
+                    val = document.getElementById('rows20').value;
+                }
+                custom(page,val);
+            }
+            return obj;
+        }
+
+        custom();
+        document.body.append(div3);
+        custom1();
+
+        function custom(page=1, rows=10){
+            table1.append(tableheader);
+            for (i=0;i<rows;i++){
+                let jsonValue = ((page-1) * rows) + i;
+                let tableRow1 = document.createElement('tr');
+                let tableR1 = document.createElement('td');
+                let tableR2 = document.createElement('td');
+                let tableR3 = document.createElement('td');
+                tableR1.innerHTML = data[jsonValue].id;
+                tableR2.innerHTML = data[jsonValue].name;
+                tableR3.innerHTML = data[jsonValue].email;
+                tableRow1.append(tableR1,tableR2,tableR3);
+                table1.append(tableRow1);
+            }  
+            div3.append(table1);
+        }
+
+        function custom1(rows=10){
+            if (rows === 10){
+                div2.append(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a13);
+            }
+            else{
+                div2.append(a1,a2,a3,a4,a5,a6,a12);
+            }
+            document.body.append(div2);
+        }
+  
+
+
+    </script>
+</body>
+</html>
