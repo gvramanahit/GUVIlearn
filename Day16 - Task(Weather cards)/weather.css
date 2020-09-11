@@ -1,0 +1,47 @@
+        body{
+            background-color: white;
+            color: white;
+        }
+        .container{
+            width: 900px;            
+            margin: 0 auto;    
+        }
+
+        .gradient1{
+            background-image: linear-gradient(to right, rgb(188, 189, 161), rgb(105, 102, 102));
+        }
+        .heading
+        {
+            text-align: center;
+        }
+        .image
+        {
+            height: 130px;
+            width: 85%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cardList
+        {
+            background-color: #54625C;
+            text-align: center;
+            height: 450px;
+        }
+
+        .headerList
+        {
+            background-color: #000000;
+            font-family: sans-serif;
+            text-align: center;
+            font-weight: bold;
+        }
+        p
+        {
+            line-height: 8px;
+        }
+
+        button{
+            background-color: none;
+            border: 0;
+        }
