@@ -1,0 +1,23 @@
+.cust-container{
+    width: 50%;
+    margin: 0 auto;
+    vertical-align: center;
+}
+.score{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(29, 151, 199);
+}
+
+.inputbox{
+    height: 50px;
+    font-size: 30px;
+    color: rgb(29, 151, 199);
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0.5px 0.5px 2.5px 2.5px skyblue;
+}
+
+.buttons {
+    font-size: 30px;
+}
