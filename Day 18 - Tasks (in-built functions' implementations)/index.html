@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>implementations</title>
+    <style>
+        h1{
+            text-align : center;
+        }
+
+        h2{
+            text-decoration: underline;
+        }
+        a{
+            font-size: 25px;
+        }
+        p{
+            font-family: sans-serif;
+            color: blue;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(198, 218, 226);">
+
+    <h1>Built-in functions' Implementations</h1>
+    <h2>Chunk function(to chunk an array into array of chunks with 2 elements) </h2>
+    <h3>ES6 (Typescript)</h3>
+    <p>
+        let arrayOne =[0,1,2,3,4,5,6,7,8]; <br>
+        <br>
+        let chunkArray = (arrayOne,chunk) => { <br>
+            &nbsp;&nbsp;&nbsp;let arrayWrap = []; <br>
+            &nbsp;&nbsp;&nbsp;for(let i=0;i'<'arrayOne.length;i++){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//actual implementation(to chunk the array) goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let arrayTwo = arrayWrap[arrayWrap.length-1]; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!arrayTwo || arrayTwo.length === chunk){ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    arrayWrap[Math.floor(i/chunk)] = [arrayOne[i]]; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrayTwo[arrayTwo.length] = arrayOne[i]; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        &nbsp;&nbsp;&nbsp;} <br>
+                        &nbsp;&nbsp;&nbsp;return arrayWrap; <br>
+        } <br>
+        <br>
+        let arrayThree = chunkArray(arrayOne,2); <br>
+        console.log(arrayThree); <br>
+    </p> <br>
+    <h3>ES5(Javascript)</h3>
+    <p>
+        var arrayOne = [0, 1, 2, 3, 4, 5, 6, 7, 8]; <br>
+        <br>
+        var chunkArray = function (arrayOne, chunk) { <br>
+            &nbsp;&nbsp;&nbsp;    var arrayWrap = []; <br>
+            &nbsp;&nbsp;&nbsp;    for (var i = 0; i < arrayOne.length; i++) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        //actual implementation(to chunk the array) goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       var arrayTwo = arrayWrap[arrayWrap.length - 1]; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       if (!arrayTwo || arrayTwo.length === chunk) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        arrayWrap[Math.floor(i / chunk)] = [arrayOne[i]]; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     } <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       else { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          arrayTwo[arrayTwo.length] = arrayOne[i]; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       } <br> 
+                        &nbsp;&nbsp;&nbsp;     } <br>
+                        &nbsp;&nbsp;&nbsp;      return arrayWrap; <br>
+        }; <br>
+        <br>
+        var arrayThree = chunkArray(arrayOne, 2); <br>
+        console.log(arrayThree); <br>
+        <br>
+        <a href="#" id="a1">Click here to see the output in console.</a> <br>
+    </p>
+    <h2>Filter function(To filter out the even numbers from the array</h2>
+    <h3>ES6 (Typescript)</h3>
+    <p>
+        let arrayOne =[0,1,2,3,4,5,6,7,8]; <br>
+        <br>
+        let filterArray = (arrayOne) => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    let arrayTwo =[]; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    let j = 0; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     for(let i=0;i'<'arrayOne.length;i++){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          //actual implementation goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      if (filterLogic(arrayOne[i])){ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          arrayTwo[j] = arrayOne[i]; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          j++;  <br>
+                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;     } <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      } <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      return arrayTwo; <br>
+        } <br>
+        <br>
+
+        let filterLogic = (element) => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    if(element % 2 === 0){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       return true; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    } <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     else{ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      return false; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    } <br>
+        } <br>
+
+        let arrayThree = filterArray(arrayOne); <br>
+        console.log(arrayThree); <br>
+    </p> <br>
+
+    <h3>ES5(Javascript)</h3>
+    <p>
+        var arrayOne = [0, 1, 2, 3, 4, 5, 6, 7, 8]; <br>
+        <br>
+        var filterArray = function (arrayOne) { <br>
+            &nbsp;&nbsp;&nbsp;      var arrayTwo = []; <br>
+            &nbsp;&nbsp;&nbsp;    var j = 0; <br>
+            &nbsp;&nbsp;&nbsp;    for (var i = 0; i < arrayOne.length; i++) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         //actual implementation goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        if (filterLogic(arrayOne[i])) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           arrayTwo[j] = arrayOne[i]; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           j++; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       } <br>
+                    &nbsp;&nbsp;&nbsp;   } <br>
+                    &nbsp;&nbsp;&nbsp;   return arrayTwo; <br>
+        }; <br>
+        <br>
+        var filterLogic = function (element) { <br>
+            &nbsp;&nbsp;&nbsp;  if (element % 2 === 0) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       return true; <br>
+                &nbsp;&nbsp;&nbsp;    } <br>
+                &nbsp;&nbsp;&nbsp;    else { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       return false; <br>
+                    &nbsp;&nbsp;&nbsp;   } <br>
+        }; <br>
+        <br>
+        var arrayThree = filterArray(arrayOne); <br>
+        console.log(arrayThree); <br>
+    </p> <br>
+    <a href="#" id="a2">Click here to see the output in console.</a> <br>
+
+    <h2>Reduce function(to add all the even numbers)</h2>
+    <h3>ES6 (Typescript)</h3>
+    <p>
+        let arrayOne =[0,1,2,3,4,5,6,7,8]; <br>
+        <br>
+        let reduceArray = (arrayOne,acc) => { <br>
+            &nbsp;&nbsp;&nbsp;    for(let i=0;i'<'arrayOne.length;i++){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        //actual implementation(to add all the even numbers) goes here. <br>
+                &nbsp;&nbsp;&nbsp;      if (reduceLogic(arrayOne[i])){ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        acc = acc +  arrayOne[i]; <br>
+                    &nbsp;&nbsp;&nbsp;    } <br>
+                    &nbsp;&nbsp;&nbsp;    } <br>
+                    &nbsp;&nbsp;&nbsp;    return acc; <br>
+        } <br>
+        <br>
+        let reduceLogic = (element) => { <br>
+            &nbsp;&nbsp;&nbsp;   if(element % 2 === 0){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        return true; <br>
+                &nbsp;&nbsp;&nbsp;    } <br>
+                &nbsp;&nbsp;&nbsp;    else{ <br>
+                    &nbsp;&nbsp;&nbsp;v        return false; <br>
+                    &nbsp;&nbsp;&nbsp;   } <br>
+        } <br>
+        <br>
+        let acc = reduceArray(arrayOne,0); <br>
+        console.log(acc); <br>
+    </p> <br>
+    <h3>ES5 (Javascript)</h3>
+    <p>
+        var arrayOne = [0, 1, 2, 3, 4, 5, 6, 7, 8]; <br>
+        <br>
+        var reduceArray = function (arrayOne, acc) { <br> 
+            &nbsp;&nbsp;&nbsp;    for (var i = 0; i < arrayOne.length; i++) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        //actual implementation(to add all the even numbers) goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    if (reduceLogic(arrayOne[i])) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        acc = acc + arrayOne[i]; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    } <br>
+                    &nbsp;&nbsp;&nbsp; } <br>
+                    &nbsp;&nbsp;&nbsp; return acc; <br>
+        }; <br>
+        <br>
+        var reduceLogic = function (element) { <br>
+            &nbsp;&nbsp;&nbsp;  if (element % 2 === 0) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      return true; <br>
+                &nbsp;&nbsp;&nbsp;    } <br>
+                &nbsp;&nbsp;&nbsp;    else { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        return false; <br> 
+                    &nbsp;&nbsp;&nbsp;    } <br>
+        }; <br>
+        <br>
+        var acc = reduceArray(arrayOne, 0); <br>
+        console.log(acc); <br>
+    </p>
+    <a href="#" id="a3">Click here to see the output in console.</a> <br>
+    <br>
+    <h2>Sum function(to sum the elements of an array)</h2>
+    <h3>ES6 (Typescript)</h3>
+    <p> 
+        let arrayOne =[0,1,2,3,4,5,6,7,8]; <br>
+        <br>
+        let sumArray = (arrayOne) => { <br>
+            &nbsp;&nbsp;&nbsp;    let sum = 0; <br>
+            &nbsp;&nbsp;&nbsp;   for(let i=0;i'<'arrayOne.length;i++){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        //actual implementation(to sum the elements of an array) goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       sum = sum + arrayOne[i]; <br>
+                &nbsp;&nbsp;&nbsp;   } <br> 
+                &nbsp;&nbsp;&nbsp;   return sum; <br>
+        } <br> 
+        <br>
+        let sum = sumArray(arrayOne); <br>
+        console.log(sum); <br>
+    </p>
+    
+    <h3>ES5 (Javascript)</h3>
+    <p>
+        var arrayOne = [0, 1, 2, 3, 4, 5, 6, 7, 8]; <br>
+        <br>
+        var sumArray = function (arrayOne) { <br>
+            &nbsp;&nbsp;&nbsp;    var sum = 0; <br>
+            &nbsp;&nbsp;&nbsp;    for (var i = 0; i < arrayOne.length; i++) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        //actual implementation(to sum the elements of an array) goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        sum = sum + arrayOne[i]; <br>
+                &nbsp;&nbsp;&nbsp;    } <br>
+                &nbsp;&nbsp;&nbsp;    return sum; <br>
+        }; <br>
+        <br>
+        var sum = sumArray(arrayOne); <br>
+        console.log(sum); <br>
+    </p>
+    <a href="#" id="a4">Click here to see the output in console.</a> <br>
+    <br>
+    <h2>Find function(to find the first element which is greater than 5)</h2>
+    <h3>ES6 (Typescript)</h3>
+
+    <p>
+        let arrayOne =[0,1,2,8,3,7,5]; <br>
+        <br>
+        let findArray = (arrayOne) => { <br>
+            &nbsp;&nbsp;&nbsp;    let searchVal; <br>
+            &nbsp;&nbsp;&nbsp;    for(let i=0;i'<'arrayOne.length;i++){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        //actual implementation(to find the first element which is greater than 5) goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        if(arrayOne[i] > 5){ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           searchVal = arrayOne[i]; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           i = arrayOne.length; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      } <br>
+                    &nbsp;&nbsp;&nbsp;   } <br>
+                    &nbsp;&nbsp;&nbsp;    return searchVal; <br>
+        } <br>
+        <br>
+        let foundVal = findArray(arrayOne); <br>
+        console.log(foundVal); <br>
+    </p> <br>
+    <h3>ES5 (Javascript)</h3>
+    <p>
+        var arrayOne = [0, 1, 2, 8, 3, 7, 5]; <br>
+        <br>
+        var findArray = function (arrayOne) { <br>
+            &nbsp;&nbsp;&nbsp;    var searchVal; <br>
+            &nbsp;&nbsp;&nbsp;    for (var i = 0; i < arrayOne.length; i++) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        //actual implementation(to find the first element which is greater than 5) goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        if (arrayOne[i] > 5) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            searchVal = arrayOne[i]; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            i = arrayOne.length; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       } <br>
+                    &nbsp;&nbsp;&nbsp;    } <br> 
+                    &nbsp;&nbsp;&nbsp;    return searchVal; <br>
+        }; <br>
+        <br>
+        var foundVal = findArray(arrayOne); <br>
+        console.log(foundVal); <br>
+    </p>
+    <a href="#" id="a5">Click here to see the output in console.</a> <br>
+    <script src="script.js"></script>
+</body>
+</html>
