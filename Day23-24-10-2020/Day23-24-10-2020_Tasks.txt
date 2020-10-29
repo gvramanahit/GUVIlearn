@@ -1,0 +1,132 @@
+To create the table & insert rows into user_profile table:
+----------------------------------------------------------
+create table social_media.user_profile (user_number int(5),userid varchar(20), gender varchar(10),age integer(3));
+
+
+insert into social_media.user_profile values(1,'venkat','male',27);
+insert into social_media.user_profile values(2,'ram','male',27);
+insert into social_media.user_profile values(3,'rajesh','male',27);
+insert into social_media.user_profile values(4,'Priya','female',25);
+insert into social_media.user_profile values(5,'Geetha','female',26);
+
+To create the table and insert rows into profile_status:
+---------------------------------------------------------
+create table social_media.profile_status (user_number int(5),
+status char(1));
+
+insert into social_media.profile_status values(1,'A');
+insert into social_media.profile_status values(2,'A');
+insert into social_media.profile_status values(3,'A');
+insert into social_media.profile_status values(4,'A');
+insert into social_media.profile_status values(5,'I');
+
+To create the table and insert rows into friends:
+-------------------------------------------------
+create table social_media.friends (user_number int(5), friend_number int(5));
+
+insert into social_media.friends values(1,2);
+insert into social_media.friends values(1,3);
+insert into social_media.friends values(1,4);
+
+insert into social_media.friends values(2,1);
+insert into social_media.friends values(2,5);
+
+insert into social_media.friends values(3,1);
+
+insert into social_media.friends values(4,1);
+
+insert into social_media.friends values(5,2);
+
+To create the table and insert rows into posts:
+--------------------------------------------------
+create table social_media.posts ( post_id varchar(7), user_number int(5));
+
+insert into social_media.posts values('post1', 1);
+insert into social_media.posts values('post2', 2);
+insert into social_media.posts values('post3', 3);
+insert into social_media.posts values('post4', 4);
+insert into social_media.posts values('post5', 5);
+
+To create the table and insert rows into comments:
+--------------------------------------------------
+create table social_media.comments (user_number int(5), post_id varchar(7), comment varchar(50));
+
+insert into social_media.comments values(1,'post2','great! :)');
+insert into social_media.comments values(1,'post3','Good to see you!');
+
+insert into social_media.comments values(2,'post5','Long time!');
+
+insert into social_media.comments values(3,'post1','Lol.. So funny');
+
+insert into social_media.comments values(4,'post1','Ha ha :D');
+
+insert into social_media.comments values(5,'post2','Looks good');
+
+To create the table and insert rows into likes:
+--------------------------------------------------
+create table social_media.likes (post_id varchar(7), liked_by int(5));
+
+insert into social_media.likes values ('post1',3);
+insert into social_media.likes values ('post1',4);
+
+insert into social_media.likes values ('post2',1);
+insert into social_media.likes values ('post2',5);
+
+insert into social_media.likes values ('post3',1);
+
+insert into social_media.likes values ('post5',2);
+
+To create the table and insert rows into user_login_details:
+-------------------------------------------------------------
+create table social_media.user_login_details (user_number int(5),userid varchar(20), password varchar(15));
+
+
+insert into social_media.user_login_details values(1,'venkat','password1');
+insert into social_media.user_login_details values(2,'ram','password2');
+insert into social_media.user_login_details values(3,'rajesh','password3');
+insert into social_media.user_login_details values(4,'Priya','password4');
+insert into social_media.user_login_details values(5,'Geetha','password5');
+
+QUERIES:
+********
+1.  in friends table, list the data which are matching with user profile id.
+-----------------------------------------------------------------------------
+
+select b.user_number, userid, a.friend_number from 
+social_media.friends a inner join 
+social_media.user_profile b
+on a.user_number = b.user_number
+where b.user_number = 2;
+
+2.display all the posts of user id number 5.
+--------------------------------------------
+
+select * from social_media.posts
+where user_number = 5;
+
+3.write a query that matching the words or characters with %ra%
+----------------------------------------------------------------
+
+select * from social_media.user_profile
+where userid like '%ra%';
+
+4. limit the display data from the table comments for 5 which belongs to the user 3.
+-------------------------------------------------------------------------------------
+
+select * from social_media.comments
+where user_number = 3
+limit 5;
+
+5. combine profile_status and user_profile and user_login_details  display matching records.
+----------------------------------------------------------------------------------------------
+
+select * from 
+social_media.user_profile a,
+social_media.profile_status b,
+social_media.user_login_details c
+where a.user_number = b.user_number
+and a.user_number = c.user_number;
+
+
+
+
